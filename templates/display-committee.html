@@ -1,0 +1,107 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    {{ committee_id }}
+{% endblock %}
+
+{% block main %}
+
+<h1>{{ committee["fullname"] }}</h1>
+<h2>({{ committee_id }})</h2>
+
+<br>
+
+<table class="table table-striped" style="text-align:center">
+    <thead>
+        <tr>
+            <th>Organ</th>
+            <th>Capacity</th>
+            <th>Current Size</th>
+            <th># Free</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>{{ committee["organ"] }}</td>
+            <td>{{ committee["capacity"] }}</td>
+            <td>{{ committee["size"] }}</td>
+            <td>{{ committee["capacity"]-committee["size"] }}</td>
+        </tr>
+    </tbody>
+</table>
+
+<br>
+
+<h2>Staff</h2>
+<br>
+<table class="table table-striped" style="text-align:left">
+    <thead>
+        <tr>
+            <th>Position</th>
+            <th>ID</th>
+            <th>Name</th>
+            <th>E-Mail</th>
+            <th>Phone</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for staffer in staffers %}
+        <tr>
+            <td>{{ staffer["position"] }}</td>
+            <td>{{ staffer["id"] }}</td>
+            <td>{{ staffer["name"] }}</td>
+            <td>{{ staffer["email"] }}</td>
+            <td>{{ staffer["phone_number"] }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+<br>
+
+<h2>Locations</h2>
+<br>
+<table class="table table-striped" style="text-align:left">
+    <thead>
+        <tr>
+            <th>Thursday (I)</th>
+            <th>Friday (II, III)</th>
+            <th>Saturday (IV, V, VI)</th>
+            <th>Sunday (VII)</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>{{ committee["day1"] }}</td>
+            <td>{{ committee["day2"] }}</td>
+            <td>{{ committee["day3"] }}</td>
+            <td>{{ committee["day4"] }}</td>
+        </tr>
+    </tbody>
+</table>
+
+<br>
+
+<h2>Delegates and Positions</h2>
+<br>
+<table class="table table-striped" style="text-align:left">
+    <thead>
+        <tr>
+            <th>Position</th>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Delegation</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for delegate in delegates %}
+        <tr>
+            <td>{{ delegate["position_name"] }}</td>
+            <td>{{ delegate["id"] }}</td>
+            <td>{{ delegate["name"] }}</td>
+            <td><a href="/display-delegation?school_name={{ delegate["school"] }}">{{ delegate["school"] }}</a></td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Committees
+{% endblock %}
+
+{% block main %}
+<h1>All Committees</h1>
+
+<br>
+
+<table class="table table-striped" style="text-align:left">
+    <thead>
+        <tr>
+            <th>Organ</th>
+            <th>ID</th>
+            <th>Full Name</th>
+            <th>Head Chair</th>
+            <th>Size</th>
+            <th>Day 1</th>
+            <th>Day 2</th>
+            <th>Day 3</th>
+            <th>Day 4</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for committee in committees %}
+        <tr>
+            <td>{{ committee["organ"] }}</td>
+            <td>{{ committee["id"] }}</td>
+            <td><a href="/display-committee?committee_id={{ committee["id"] }}">{{ committee["fullname"] }}</a></td>
+            <td>{{ committee["name"] }}</td>
+            <td>{{ committee["size"] }}</td>
+            <td>{{ committee["day1"] }}</td>
+            <td>{{ committee["day2"] }}</td>
+            <td>{{ committee["day3"] }}</td>
+            <td>{{ committee["day4"] }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+{% endblock %}

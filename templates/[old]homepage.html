@@ -1,0 +1,52 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Welcome
+{% endblock %}
+
+{% block main %}
+    <h1>
+        Welcome to the YMUN Master Delegation Database!
+    </h1>
+    <p>
+        Use the navigation bar above to view tables.
+    </p>
+    <p>
+        Or, if you have a specific inquiry, search for it below!
+    </p>
+
+
+
+    <form action="/search" method="get">
+        <select class="form-control" name="searchbyvalue" required>
+
+            <option disabled selected value> Search By: </option>
+            <option value="search_advisor" name="search_advisor">Advisor</option>
+            <option value="search_delegation" name="search_delegation">Delegation</option>
+            <option value="search_delegate" name="search_delegate">Delegate</option>
+            <option value="search_committee" name="search_committee">Committee</option>
+            <option value="search_room" name="search_room">Room</option>
+        </select>
+
+        <input name="query" placeholder="Type your search here" type="text">
+        <button type="submit">Search</button>
+        <div class="btn-group">
+            <button type="button" class="btn btn-primary">Search All</button>
+            <button type="button" class="btn btn-primary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <span class="sr-only">Toggle Dropdown</span>
+            </button>
+            <div class="dropdown-menu">
+                <a disabled class="dropdown-item">Search in...</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Advisors</a>
+                <a class="dropdown-item" href="#">Delegates</a>
+                <a class="dropdown-item" href="#">Delegations</a>
+                <a class="dropdown-item" href="#">Committees</a>
+                <a class="dropdown-item" href="#">Staff</a>
+                <a class="dropdown-item" href="#">Spaces</a>
+            </div>
+        </div>
+    </form>
+
+
+{% endblock %}

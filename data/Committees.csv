@@ -1,0 +1,40 @@
+Organ,ID,Name,Assignments Name,Capacity,Current Size,Day 1 Room,Day 2 Room,Day 3 Room,Day 4 Room
+GA,HCREF,UN High Commissioner for Refugees,UNHCR,100,95,Temple,SSS 114,Temple,SSS 114
+GA,SPECPOL,Special Political and Decolonization Committee,SPECPOL,105,98,Chapel,Davies,Chapel,Davies
+GA,DISEC,Disarmament and International Security Committee,DISEC,105,95,George,LC 102,George,LC 102
+GA,HLEGAL,Historical Legal Committee,Historical Legal,105,103,York,LC 101,York,LC 101
+GA,SOCHUM,"Social, Humanitarian, and Cultural Committee",SOCHUM,105,105,LC 101,York,LC 101,York
+GA,UNEP,United Nations Environmental Programme,UNEP,105,104,LC 102,George,LC 102,George
+GA,UNHRC,United Nations Human Rights Council,HR Council,105,102,Davies,Chapel,Davies,Chapel
+GA,ECOFIN,Economic and Financial Committee,ECOFIN,105,94,SSS 114,Temple,SSS 114,Temple
+ECOSOC,CSW,Commission on the Status of Women,CSW,80,70,A,I,I,A
+ECOSOC,CCPCJ,Commission on Crime Prevention and Criminal Justice,CCPCJ,80,76,B,J,J,B
+ECOSOC,WB,World Bank,World Bank,80,71,C ,K,K,C
+ECOSOC,CND,Commission on Narcotic Drugs,CND,80,60,D,L,L,D
+ECOSOC,CSTD,Commission on Science and Technology for Development,CSTD,80,62,E,M,M,E
+ECOSOC,UNISDR,United Nations International Strategy for Disaster Reduction,UNISDR,80,52,F,N,N,F
+ECOSOC,WHO,World Health Organization,WHO,80,65,G ,O,O,G
+ECOSOC,CPD,Commission on Population and Development,CPD,80,64,H,P,P,H
+RB,AU,African Union,African Union (AU),54,54,WLH 207,WLH 207,WLH 207,WLH 207
+RB,CELAC,CELAC (Spanish-Speaking Committee),CELAC,14,13,WLH 210,WLH 210,WLH 210,WLH 210
+RB,EURO,European Commission,European Commission,28,28,WLH 204,WLH 204,WLH 204,WLH 204
+RB,ARAB,Arab League,Arab League,22,22,WLH 202,WLH 202,WLH 202,WLH 202
+RB,OAS,Organization of American States,Organization of American States (OAS),35,35,WLH 211,WLH 211,WLH 211,WLH 211
+RB,ASEAN,Association of South East Asian Nations (ASEAN),Association of South East Asian Nations (ASEAN),26,26,WLH 203,WLH 203,WLH 203,WLH 203
+RB,ARCTIC,2025: Arctic Council,2025: Arctic Council,20,20,WLH 209,WLH 209,WLH 209,WLH 209
+Specialized,TOKYO,Tokyo 2020,Tokyo 2020,17,17,LC 203,LC 203,LC 203,LC 203
+Specialized,ANCIEN,Ancient Council,Ancient Council,15,15,LC 204,LC 204,LC 204,LC 204
+Specialized,SPACE,Space,Space,19,19,LC 205,LC 205,LC 205,LC 205
+Specialized,DESSUR,Designated Survivor,Designated Survivor,20,20,LC 206,LC 206,LC 206,LC 206
+Specialized,NGO,NGO Forum,NGO Forum,16,16,LC 208,LC 208,LC 208,LC 208
+Specialized,PRESS,Press Corps,Press Corps,12,12,LC 209,LC 209,LC 209,LC 209
+Specialized,ICJ,International Court of Justice,ICJ,16,16,LC 210,LC 210,LC 210,LC 210
+Specialized,NICAEA,Council of Nicaea,Council of Nicaea,30,30,LC 211,LC 211,LC 211,LC 211
+Crisis,ADHOC,Ad Hoc,Ad-Hoc,14,14,WLH 001,WLH 001,WLH 001,WLH 001
+Crisis,JCCCIA,JCC: Central Intelligence Agency,Joint Crisis Committee (JCC): CIA,12,12,WLH 002,WLH 002,WLH 002,WLH 002
+Crisis,JCCKGB,JCC: Komitet Gosudarstvennoy Bezopasnosti,Joint Crisis Committee (JCC): KGB,13,13,WLH 003,WLH 003,WLH 003,WLH 003
+Crisis,TECHFTR,The Technological Future,The Technological Future,15,15,WLH 006,WLH 006,WLH 006,WLH 006
+Crisis,AUSHUN,"Common Ministerial Council of the Austro-Hungarian Empire, July 1914","Common Ministerial Council of the Austro-Hungarian Empire, July 1914",15,15,WLH 007,WLH 007,WLH 007,WLH 007
+Crisis,CDC,The Centers for Disease Control and Prevention,Centers for Disease Control and Prevention,18,18,WLH 011,WLH 011,WLH 011,WLH 011
+Crisis,UNSC,United Nations Security Council,United Nations Security Council,15,15,WLH 009,WLH 009,WLH 009,WLH 009
+Crisis,KOREA,Japanese Occupation of Korea,Japanese Occupation of Korea,15,15,WLH 013,WLH 013,WLH 013,WLH 013

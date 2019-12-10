@@ -1,0 +1,102 @@
+@font-face
+{
+    font-family: YaleNew;
+    src: url(/static/YaleNew-Roman.otf)
+}
+
+* {
+ font-family: roboto;
+}
+
+nav .navbar-brand
+{
+    /* size for brand */
+    font-size: xx-large;
+    padding-left: 20px;
+}
+
+nav .nav-item
+{
+    font-family: futura-pt;
+    color: gray;
+    font-weight: 500;
+    letter-spacing: 2px;
+}
+
+.yaleblue
+{
+    font-family: YaleNew;
+    color: #00356b;
+}
+
+h1
+{
+    font-family: YaleNew;
+    color: #00356b;
+}
+
+h2
+{
+    font-family: futura-pt;
+    color: gray;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 150%;
+    font-weight: 400;
+}
+
+th
+{
+    font-family: futura-pt;
+    text-transform: uppercase;
+    color: gray;
+    font-weight: 500;
+}
+
+main .form-control
+{
+
+    /* override Bootstrap's 100% width for form controls */
+    width: auto;
+}
+
+main
+{
+    /* scroll horizontally as needed */
+    overflow-x: auto;
+
+    /* center contents */
+    text-align: center;
+}
+
+main img
+{
+    /* constrain images on small screens */
+    max-width: 100%;
+}
+
+img
+{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.navbarimg
+{
+    height: 30%;
+    width: 30%;
+    margin-right: 10px;
+}
+
+.footerimg
+{
+    height: 20%;
+    width: 20%;
+}
+
+.favicon
+{
+    height: 5%;
+    width: 5%;
+}

@@ -1,0 +1,81 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    {{ committee_id }}
+{% endblock %}
+
+{% block main %}
+
+<h1>{{ delegation["school_name"] }}</h1>
+
+<br>
+
+<table class="table table-striped" style="text-align:center">
+    <thead>
+        <tr>
+            <th>D/I</th>
+            <th>Country</th>
+            <th>Head Advisor</th>
+            <th># Delegates</th>
+            <th># Advisors</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>{{ delegation["d_i"] }}</td>
+            <td>{{ delegation["country"] }}</td>
+            <td>{{ delegation["name"] }}</td>
+            <td>{{ delegation["delegate_count"] }}</td>
+            <td>{{ delegation["advisor_count"] }}</td>
+        </tr>
+    </tbody>
+</table>
+
+<br>
+
+<h2>Advisors</h2>
+<br>
+<table class="table table-striped" style="text-align:left">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>E-Mail</th>
+            <th>US Phone Number</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for advisor in advisors %}
+        <tr>
+            <td>{{ advisor["name"] }}</td>
+            <td>{{ advisor["email"] }}</td>
+            <td>{{ advisor["us_phone_number"] }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+<br>
+
+<h2>Delegates and Positions</h2>
+<br>
+<table class="table table-striped" style="text-align:left">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Position</th>
+            <th>Committee</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for delegate in delegates %}
+        <tr>
+            <td>{{ delegate["id"] }}</td>
+            <td>{{ delegate["name"] }}</td>
+            <td>{{ delegate["position_name"] }}</td>
+            <td><a href="/display-committee?committee_id={{ delegate["committee_id"] }}">{{ delegate["committee_name"] }}</a></td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

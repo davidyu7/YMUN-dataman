@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Search-By Results
+{% endblock %}
+
+{% block main %}
+
+<h1>Search Results:</h1>
+
+<br>
+
+<table class="table table-striped" style="text-align:left">
+    <thead>
+        <tr>
+        {% for title in header %}
+            <th> {{ title }} </th>
+        {% endfor %}
+        </tr>
+    </thead>
+    <tbody>
+        {% for list in search %}
+        <tr>
+            {% for item in list.values() %}
+            <td>{{ item }}</td>
+            {% endfor %}
+        </tr>
+        {% endfor %}
+
+
+    </tbody>
+</table>
+
+
+{% endblock %}

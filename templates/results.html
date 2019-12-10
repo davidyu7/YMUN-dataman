@@ -1,0 +1,60 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Search Results
+{% endblock %}
+
+{% block main %}
+
+{% if search_in == "all" %}
+<h2>Showing all results</h2><br>
+{% else %}
+<h2>Showing results in</h2>
+{% endif %}
+
+{% for result in results %}
+
+<h1>{{ result["type"] }}</h1>
+
+    {% if result["empty"] %}
+    <p class="text-center">No matches found</p>
+
+    {% else %}
+    <br>
+    <table class="table table-striped" style="text-align:left">
+
+        <thead>
+            <tr>
+                {% for header in result["headers"] %}
+                <th>{{ header }}</th>
+                {% endfor %}
+            </tr>
+        </thead>
+
+        <tbody>
+            {% for row in result["content"] %}
+            <tr>
+                {% for key in row %}
+                    {% if key == "school" %}
+                    <td><a href="/display-delegation?school_name={{ row["school"] }}">{{ row["school"] }}</a></td>
+                    {% elif key == "committee_id" %}
+                    <td><a href="/display-committee?committee_id={{ row["committee_id"] }}">{{ row["committee_id"] }}</a></td>
+                    {% else %}
+                    <td>{{ row[key] }}</td>
+                    {% endif %}
+                {% endfor %}
+            </tr>
+            {% endfor %}
+
+
+        </tbody>
+
+    </table>
+    {% endif %}
+
+<hr>
+
+{% endfor %}
+
+
+{% endblock %}

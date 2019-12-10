@@ -1,0 +1,41 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Delegations
+{% endblock %}
+
+{% block main %}
+<h1>All Delegations</h1>
+
+<br>
+
+<table class="table table-striped" style="text-align:left">
+    <thead>
+        <tr>
+            <th>D/I</th>
+            <th>School</th>
+            <th>Country</th>
+            <th>Head Adv.</th>
+            <th>Email</th>
+            <th>Phone Number</th>
+            <th>Dels</th>
+            <th>Advs</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for delegation in delegations %}
+        <tr>
+            <td>{{ delegation["d_i"] }}</td>
+            <td><a href="/display-delegation?school_name={{ delegation["school_name"] }}">{{ delegation["school_name"] }}</a></td>
+            <td>{{ delegation["country"] }}</td>
+            <td>{{ delegation["name"] }}</td>
+            <td>{{ delegation["email"] }}</td>
+            <td>{{ delegation["us_phone_number"] }}</td>
+            <td>{{ delegation["delegate_count"] }}</td>
+            <td>{{ delegation["advisor_count"] }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+{% endblock %}

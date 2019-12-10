@@ -1,0 +1,70 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Welcome
+{% endblock %}
+
+{% block main %}
+    <h1>
+        Welcome to the YMUN Master Delegation Database!
+    </h1>
+    <br>
+    <p>
+        Use the navigation bar above to view tables.
+    </p>
+    <br>
+    <p>
+        Or, if you have a specific inquiry, search for it below!
+    </p>
+    <p>
+        Use the dropdown menu to refine your search to a specific category.
+    </p>
+
+    <script>
+        function searchAdvisors() {
+            document.getElementById("search_in").value = "advisors";
+            document.getElementById("searchform").submit();
+        }
+        function searchDelegates() {
+            document.getElementById("search_in").value = "delegates";
+            document.getElementById("searchform").submit();
+        }
+        function searchDelegations() {
+            document.getElementById("search_in").value = "delegations";
+            document.getElementById("searchform").submit();
+        }
+        function searchCommittees() {
+            document.getElementById("search_in").value = "committees";
+            document.getElementById("searchform").submit();
+        }
+        function searchStaffers() {
+            document.getElementById("search_in").value = "staffers";
+            document.getElementById("searchform").submit();
+        }
+    </script>
+
+    <form class="form-inline justify-content-center text-center" action="/results" id="searchform" method="get">
+
+        <input name="query" class="form-control" placeholder="Type your search here" type="text" autocomplete="off">
+        <input type="hidden" id="search_in" name="search_in" value="all">
+
+        <div class="btn-group">
+            <button type="button" class="btn btn-primary" onclick="form.submit()">Search All</button>
+
+            <button type="button" class="btn btn-primary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <span class="sr-only">Toggle Dropdown</span>
+            </button>
+
+            <div class="dropdown-menu">
+                <a disabled class="dropdown-item">Search in...</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" onclick="searchAdvisors();">Advisors</a>
+                <a class="dropdown-item" onclick="searchDelegates();">Delegates</a>
+                <a class="dropdown-item" onclick="searchDelegations();">Delegations</a>
+                <a class="dropdown-item" onclick="searchCommittees();">Committees</a>
+                <a class="dropdown-item" onclick="searchStaffers();">Staffers</a>
+            </div>
+        </div>
+    </form>
+
+{% endblock %}
