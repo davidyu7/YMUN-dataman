@@ -1,6 +1,9 @@
 cs50
 Flask
 Flask-Session
+Flask-Login
 requests
 gunicorn
 psycopg2-binary
+oauthlib
+pyOpenSSL
