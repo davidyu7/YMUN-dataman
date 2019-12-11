@@ -6,7 +6,7 @@ from flask import Flask, flash, jsonify, redirect, render_template, request, ses
 from flask_session import Session
 from tempfile import mkdtemp
 from werkzeug.exceptions import default_exceptions, HTTPException, InternalServerError
-from werkzeug.security import check_password_hash, generate_password_hash
+from gsheets import Sheets
 
 # Configure application
 app = Flask(__name__)
@@ -23,10 +23,10 @@ def after_request(response):
     return response
 
 # Old database
-# db = SQL("sqlite:///data_XLVI.db")
+db = SQL("sqlite:///data_XLVI.db")
 
 # New Heroku Database
-db = SQL("postgres://hnqodbzrirphml:8c61d75015387e2141ba3db8d6072b730a4cc194646e09239f79226fc02f879a@ec2-174-129-255-37.compute-1.amazonaws.com:5432/ddlp8u4p34upr4")
+# db = SQL("postgres://hnqodbzrirphml:8c61d75015387e2141ba3db8d6072b730a4cc194646e09239f79226fc02f879a@ec2-174-129-255-37.compute-1.amazonaws.com:5432/ddlp8u4p34upr4")
 
 @app.route("/", methods=["GET", "POST"])
 def index():
@@ -250,3 +250,18 @@ def search():
 
     # Render the page, sending the list of all results across all categories the user requested
     return render_template("results.html", results = results, search_in = search_in)
+
+@app.route("/download", methods=["GET"])
+def search():
+
+    sheets = Sheets.from_files('~/client_secrets.json', '~/storage.json')
+    sheets  #doctest: +ELLIPSIS
+    <gsheets.api.Sheets object at 0x...>
+
+
+    url = 'https://docs.google.com/spreadsheets/d/1dR13B3Wi_KJGUJQ0BZa2frLAVxhZnbz0hpwCcWSvb20'
+    s = sheets.get(url)
+    s
+    <SpreadSheet 1dR13...20 u'Spam'>
+    csv_name = attendance infos: '%(title)s - %(sheet)s.csv' % infos
+    s.to_csv(make_filename=csv_name)
