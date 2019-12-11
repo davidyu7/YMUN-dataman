@@ -151,7 +151,7 @@ def search():
     search_in = request.args.get("search_in")
 
     # Get the query from the http request
-    query = "%" + request.args.get("query") + "%"
+    query = "%" + request.args.get("query").lower() + "%"
 
     # Initialize the results to an empty list
     results = []
@@ -163,7 +163,7 @@ def search():
         result = {
             "type": "Advisors",
             "headers": ["Advisor Name", "School", "Phone", "Email"],
-            "content": db.execute("SELECT name, school, us_phone_number, email FROM Advisors WHERE name LIKE ?;", query),
+            "content": db.execute("SELECT name, school, us_phone_number, email FROM Advisors WHERE LOWER(name) LIKE ?;", query),
             "empty": False
         }
 
@@ -181,7 +181,7 @@ def search():
         result = {
             "type": "Delegates",
             "headers": ["Delegate Name", "School", "Committee", "Position"],
-            "content": db.execute("SELECT name, school, Committees.id AS committee_id, position_name FROM Delegates JOIN Committees ON Delegates.committee_assigned = Committees.assignedname WHERE name LIKE ?", query),
+            "content": db.execute("SELECT name, school, Committees.id AS committee_id, position_name FROM Delegates JOIN Committees ON Delegates.committee_assigned = Committees.assignedname WHERE LOWER(name) LIKE ?", query),
             "empty": False
         }
 
@@ -199,7 +199,7 @@ def search():
         result = {
             "type": "Delegations",
             "headers": ["Delegation Name", "Country", "# Delegates", "# Advisors"],
-            "content": db.execute("SELECT school_name AS school, country, delegate_count, advisor_count FROM Delegations WHERE school_name LIKE ?;", query),
+            "content": db.execute("SELECT school_name AS school, country, delegate_count, advisor_count FROM Delegations WHERE LOWER(school_name) LIKE ?;", query),
             "empty": False
         }
 
@@ -217,7 +217,7 @@ def search():
         result = {
             "type": "Committees",
             "headers": ["ID", "Name", "# Delegates", "Head Chair", "Phone Number", "Email"],
-            "content": db.execute("SELECT Committees.id AS committee_id, fullname, size, name, phone_number, email FROM Committees JOIN Staffers ON Committees.id = Staffers.committee_id WHERE Staffers.head_chair = '1' AND Committees.fullname LIKE ?;", query),
+            "content": db.execute("SELECT Committees.id AS committee_id, fullname, size, name, phone_number, email FROM Committees JOIN Staffers ON Committees.id = Staffers.committee_id WHERE Staffers.head_chair = '1' AND LOWER(Committees.fullname) LIKE ?;", query),
             "empty": False
         }
 
@@ -235,7 +235,7 @@ def search():
         result = {
             "type": "Staffers",
             "headers": ["Name", "Position", "Committee", "Head Chair?", "Email", "Phone"],
-            "content": db.execute("SELECT name, position, Committees.id AS committee_id, head_chair, email, phone_number FROM Committees JOIN Staffers ON Committees.id = Staffers.committee_id WHERE Staffers.name LIKE ?;", query),
+            "content": db.execute("SELECT name, position, Committees.id AS committee_id, head_chair, email, phone_number FROM Committees JOIN Staffers ON Committees.id = Staffers.committee_id WHERE LOWER(Staffers.name) LIKE ?;", query),
             "empty": False
         }
 
