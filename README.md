@@ -55,10 +55,6 @@ section of the user's guide).
 
 
 
-
-
-
-
 3. Project Features and Website Design
 
 
@@ -80,7 +76,8 @@ section of the user's guide).
     The attendance tab on the website has the goal of listing out all delegates that have been listed as "absent" for any committee session during
     the conference. When delegates are missing, the Secretariat is required to call their advisor to let them know. Listing out absent delegates
     will allow the Secreatriat to save time and more easily have access to phone numbers and email addresses, which will speed up this process
-    after attendance in each committee is taken.
+    after attendance in each committee is taken. At the moment that the website is being submitted for the CS50 project, no data will appear in the
+    attendance sheet, because attendance will only be actually taken when the conference takes place in January 2020.
 
 
 

@@ -6,7 +6,6 @@ from flask import Flask, flash, jsonify, redirect, render_template, request, ses
 from flask_session import Session
 from tempfile import mkdtemp
 from werkzeug.exceptions import default_exceptions, HTTPException, InternalServerError
-from gsheets import Sheets
 
 # Configure application
 app = Flask(__name__)
@@ -119,11 +118,11 @@ def displayRooms():
 
         #The requested room is not specified
         if not request.args.get('building'):
-            rooms = db.execute("SELECT * FROM Rooming JOIN Committees ON Committees.")
+            rooms = db.execute("SELECT * FROM Rooming JOIN Committees ON Committees;")
 
         return render_template('rooming.html')
 
-@app.route("/absences", methods=["GET"])
+@app.route("/attendance", methods=["GET"])
 def displayAbsences():
     if request.method =="GET":
 
@@ -132,10 +131,10 @@ def displayAbsences():
 @app.route("/s1", methods=["GET"])
 def s1():
     if request.method =="GET":
-        s1 = db.execute("SELECT * FROM Attendance;")
+        absences = db.execute("SELECT Attendance.name, Attendance.school, Delegates.committee_assigned, Advisors.name, Delegates.position_name, Advisors.us_phone_number FROM Attendance JOIN Advisors ON Attendance.school = Advisors.school JOIN Delegates ON Attendance.name = Delegates.name AND Attendance.school = Delegates.school WHERE Advisors.point_of_contact = '1' AND s1 ='0' ORDER BY Attendance.school;")
+        print(absences)
 
-        return render_template('s1.html')
-
+        return render_template('s1.html', absences = absences)
 
 @app.route("/s7", methods=["GET"])
 def s7():
@@ -250,18 +249,3 @@ def search():
 
     # Render the page, sending the list of all results across all categories the user requested
     return render_template("results.html", results = results, search_in = search_in)
-
-@app.route("/download", methods=["GET"])
-def search():
-
-    sheets = Sheets.from_files('~/client_secrets.json', '~/storage.json')
-    sheets  #doctest: +ELLIPSIS
-    <gsheets.api.Sheets object at 0x...>
-
-
-    url = 'https://docs.google.com/spreadsheets/d/1dR13B3Wi_KJGUJQ0BZa2frLAVxhZnbz0hpwCcWSvb20'
-    s = sheets.get(url)
-    s
-    <SpreadSheet 1dR13...20 u'Spam'>
-    csv_name = attendance infos: '%(title)s - %(sheet)s.csv' % infos
-    s.to_csv(make_filename=csv_name)

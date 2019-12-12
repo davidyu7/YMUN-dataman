@@ -1,2 +1,20 @@
-## Buttons for each session ##
-these buttons will lead to another page with a table of absent delegates sorted by delegation for each committee session
+{% extends "layout.html" %}
+
+{% block title %}
+    Welcome
+{% endblock %}
+
+{% block main %}
+    <h1>
+        Select your session of choice below!
+    </h1>
+    <br>
+    <button onclick="window.location.href = '/s1';">Thursday, Session I (1)</button>
+    <button onclick="window.location.href = '/s2';">Friday, Session I (2)</button>
+    <button onclick="window.location.href = '/s3';">Friday, Session II (3)</button>
+    <button onclick="window.location.href = '/s4';">Saturday, Session I (4)</button>
+    <button onclick="window.location.href = '/s5';">Saturday, Session II (5)</button>
+    <button onclick="window.location.href = '/s6';">Saturday, Session III (6)</button>
+    <button onclick="window.location.href = '/s7';">Sunday, Session I (7)</button>
+
+{% endblock %}

@@ -26,4 +26,4 @@ db.execute("CREATE TABLE IF NOT EXISTS Staffers (id integer PRIMARY KEY, name va
 
 db.execute("CREATE TABLE IF NOT EXISTS Rooming (id varchar, building varchar, day1 varchar, day2 varchar, day3 varchar, day4 varchar);") ##consider as table
 
-db.execute("CREATE TABLE IF NOT EXISTS Attendance (delegate_id int, s1 bit NOT NULL DEFAULT(0), s2 bit NOT NULL DEFAULT(0), s3 bit NOT NULL DEFAULT(0), s4 bit NOT NULL DEFAULT(0), s5 bit NOT NULL DEFAULT(0), s6 bit NOT NULL DEFAULT(0), s7 bit NOT NULL DEFAULT(0), FOREIGN KEY(id) REFERENCES Delegates(id));")
+db.execute("CREATE TABLE IF NOT EXISTS Attendance (name varchar, school varchar, s1 varchar NOT NULL DEFAULT(0), s2 varchar NOT NULL DEFAULT(0), s3 varchar NOT NULL DEFAULT(0), s4 varchar NOT NULL DEFAULT(0), s5 varchar NOT NULL DEFAULT(0), s6 varchar NOT NULL DEFAULT(0), s7 varchar NOT NULL DEFAULT(0));")
