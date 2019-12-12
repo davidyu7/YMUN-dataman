@@ -3,6 +3,7 @@ Flask
 Flask-Session
 requests
 gunicorn
+psycopg2-binary
 authlib
 google-api-python-client
 google-auth
