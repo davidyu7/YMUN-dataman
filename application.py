@@ -131,17 +131,66 @@ def displayAbsences():
 @app.route("/s1", methods=["GET"])
 def s1():
     if request.method =="GET":
-        absences = db.execute("SELECT Attendance.name, Attendance.school, Delegates.committee_assigned, Advisors.name, Delegates.position_name, Advisors.us_phone_number FROM Attendance JOIN Advisors ON Attendance.school = Advisors.school JOIN Delegates ON Attendance.name = Delegates.name AND Attendance.school = Delegates.school WHERE Advisors.point_of_contact = '1' AND s1 ='0' ORDER BY Attendance.school;")
-        print(absences)
+        absences = db.execute("SELECT Attendance.name, Attendance.school, Delegates.committee_assigned, Delegates.position_name, Advisors.us_phone_number FROM Attendance JOIN Advisors ON Attendance.school = Advisors.school JOIN Delegates ON Attendance.name = Delegates.name AND Attendance.school = Delegates.school WHERE Advisors.point_of_contact = '1' AND (s1 ='0' OR s1 = '') ORDER BY Attendance.school;")
+
+        #debug print(absences)
 
         return render_template('s1.html', absences = absences)
+
+@app.route("/s2", methods=["GET"])
+def s2():
+    if request.method =="GET":
+        absences = db.execute("SELECT Attendance.name, Attendance.school, Delegates.committee_assigned, Delegates.position_name, Advisors.us_phone_number FROM Attendance JOIN Advisors ON Attendance.school = Advisors.school JOIN Delegates ON Attendance.name = Delegates.name AND Attendance.school = Delegates.school WHERE Advisors.point_of_contact = '1' AND (s2 ='0' OR s2 = '') ORDER BY Attendance.school;")
+
+        #debug print(absences)
+
+        return render_template('s2.html', absences = absences)
+
+@app.route("/s3", methods=["GET"])
+def s3():
+    if request.method =="GET":
+        absences = db.execute("SELECT Attendance.name, Attendance.school, Delegates.committee_assigned, Delegates.position_name, Advisors.us_phone_number FROM Attendance JOIN Advisors ON Attendance.school = Advisors.school JOIN Delegates ON Attendance.name = Delegates.name AND Attendance.school = Delegates.school WHERE Advisors.point_of_contact = '1' AND (s3 ='0' OR s3 = '') AND s2 != '0' AND s2 != '' ORDER BY Attendance.school;")
+
+        #debug print(absences)
+
+        return render_template('s3.html', absences = absences)
+
+@app.route("/s4", methods=["GET"])
+def s4():
+    if request.method =="GET":
+        absences = db.execute("SELECT Attendance.name, Attendance.school, Delegates.committee_assigned, Delegates.position_name, Advisors.us_phone_number FROM Attendance JOIN Advisors ON Attendance.school = Advisors.school JOIN Delegates ON Attendance.name = Delegates.name AND Attendance.school = Delegates.school WHERE Advisors.point_of_contact = '1' AND (s4 ='0' OR s4 = '') ORDER BY Attendance.school;")
+
+        #debug print(absences)
+
+        return render_template('s4.html', absences = absences)
+
+@app.route("/s5", methods=["GET"])
+def s5():
+    if request.method =="GET":
+        absences = db.execute("SELECT Attendance.name, Attendance.school, Delegates.committee_assigned, Delegates.position_name, Advisors.us_phone_number FROM Attendance JOIN Advisors ON Attendance.school = Advisors.school JOIN Delegates ON Attendance.name = Delegates.name AND Attendance.school = Delegates.school WHERE Advisors.point_of_contact = '1' AND (s5 ='0' OR s5 = '') AND s4 != '0' AND s4 != '' ORDER BY Attendance.school;")
+
+        #debug print(absences)
+
+        return render_template('s5.html', absences = absences)
+
+@app.route("/s6", methods=["GET"])
+def s6():
+    if request.method =="GET":
+        absences = db.execute("SELECT Attendance.name, Attendance.school, Delegates.committee_assigned, Delegates.position_name, Advisors.us_phone_number FROM Attendance JOIN Advisors ON Attendance.school = Advisors.school JOIN Delegates ON Attendance.name = Delegates.name AND Attendance.school = Delegates.school WHERE Advisors.point_of_contact = '1' AND (s6 ='0' OR s6 = '') AND s5 != '0' AND s5 != '' ORDER BY Attendance.school;")
+
+        #debug print(absences)
+
+        return render_template('s6.html', absences = absences)
 
 @app.route("/s7", methods=["GET"])
 def s7():
     if request.method =="GET":
-        s7 = db.execute("SELECT * FROM Attendance;")
+        absences = db.execute("SELECT Attendance.name, Attendance.school, Delegates.committee_assigned, Delegates.position_name, Advisors.us_phone_number FROM Attendance JOIN Advisors ON Attendance.school = Advisors.school JOIN Delegates ON Attendance.name = Delegates.name AND Attendance.school = Delegates.school WHERE Advisors.point_of_contact = '1' AND (s7 ='0' OR s7 = '') ORDER BY Attendance.school;")
 
-        return render_template('s7.html')
+        #debug print(absences)
+
+        return render_template('s7.html', absences = absences)
+
 # Display search results
 @app.route("/results", methods=["GET"])
 def search():

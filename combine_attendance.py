@@ -24,12 +24,7 @@ with open("Committees.csv", "r") as committee_list: # use MDS
                     for r in range(sh.nrows):
                         c.writerow(sh.row_values(r))
         else:
-            with xlrd.open_workbook(comm_file_name) as wb:
-                sh = wb.sheet_by_index(0)
-                with open('Attendance.csv', 'a') as f:   # open('a_file.csv', 'w', newline="") for python 3
-                    c = csv.writer(f)
-                    for r in range(1, sh.nrows):
-                        c.writerow(sh.row_values(r))
+            continue
 
 
 db = cs50.SQL("sqlite:///data_XLVI.db")

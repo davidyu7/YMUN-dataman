@@ -1,5 +1,7 @@
 Users's Guide to YMUN Data Management Project
 
+
+
 The YMUN Registration and Data Management Platform is a website and applicatioin created by David Yu, Emily Mayo, and Claire Calkins in CS50, as a
 practical program to be used during the Yale Model United Nations Conference, a MUN conference that attracts and hosts about 200 high school
 teachers and students every year. This application/website will serve as a data management and organization system for that conference.
