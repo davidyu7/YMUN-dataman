@@ -72,7 +72,7 @@ section of the user's guide).
 
 
 
-    ***c. Attendance ***
+    c. Attendance
     The attendance tab on the website has the goal of listing out all delegates that have been listed as "absent" for any committee session during
     the conference. When delegates are missing, the Secretariat is required to call their advisor to let them know. Listing out absent delegates
     will allow the Secreatriat to save time and more easily have access to phone numbers and email addresses, which will speed up this process

@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Absences
+{% endblock %}
+
+{% block main %}
+<h1>Absences: Session 1</h1>
+<p>Note: this list does not include delegates who were absent in the previous session.</p>
+
+<br>
+
+<table class="table table-striped" style="text-align:left">
+    <thead>
+        <tr>
+            <th>Delegate Name</th>
+            <th>Committee</th>
+            <th>Position</th>
+            <th>Advisor Name</th>
+            <th>Phone Number</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for absence in absences %}
+        <tr>
+            <td>{{ absences["name"] }}</td>
+            <td>{{ absences["committee_assigned"] }}</a></td>
+            <td>{{ absences["position_name"] }}</td>
+            <td>{{ absences["name"] }}</a></td>
+            <td>{{ absences["us_phone_number"] }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+{% endblock %}
