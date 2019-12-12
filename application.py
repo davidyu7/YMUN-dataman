@@ -111,16 +111,16 @@ def displayDelegationInfo():
         return render_template('display-delegation.html', delegates=delegates, school_name=school_name, delegation=delegation, advisors=advisors)
 
 #Display the list of rooms
-@app.route("/rooming", methods=["GET"])
-def displayRooms():
-
-    if request.method =="GET":
-
-        #The requested room is not specified
-        if not request.args.get('building'):
-            rooms = db.execute("SELECT * FROM Rooming JOIN Committees ON Committees;")
-
-        return render_template('rooming.html')
+# @app.route("/rooming", methods=["GET"])
+# def displayRooms():
+#
+#     if request.method =="GET":
+#
+#         #The requested room is not specified
+#         if not request.args.get('building'):
+#             rooms = db.execute("SELECT * FROM Rooming JOIN Committees ON Committees;")
+#
+#         return render_template('rooming.html')
 
 @app.route("/attendance", methods=["GET"])
 def displayAbsences():
