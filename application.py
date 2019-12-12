@@ -22,10 +22,10 @@ def after_request(response):
     return response
 
 # Old database
-db = SQL("sqlite:///data_XLVI.db")
+# db = SQL("sqlite:///data_XLVI.db")
 
 # New Heroku Database
-# db = SQL("postgres://hnqodbzrirphml:8c61d75015387e2141ba3db8d6072b730a4cc194646e09239f79226fc02f879a@ec2-174-129-255-37.compute-1.amazonaws.com:5432/ddlp8u4p34upr4")
+db = SQL("postgres://hnqodbzrirphml:8c61d75015387e2141ba3db8d6072b730a4cc194646e09239f79226fc02f879a@ec2-174-129-255-37.compute-1.amazonaws.com:5432/ddlp8u4p34upr4")
 
 @app.route("/", methods=["GET", "POST"])
 def index():
