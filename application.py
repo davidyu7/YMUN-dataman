@@ -118,6 +118,7 @@ def callback():
     # The user authenticated with Google, authorized your
     # app, and now you've verified their email through Google!
     print(userinfo_response.json()["email"])
+    session.clear()
     if "@ymun.org" in userinfo_response.json()["email"]:
         print("this worked")
         session["user_id"] = userinfo_response.json()["email"]
