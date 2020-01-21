@@ -231,7 +231,7 @@ def displayDelegationInfo():
                                delegation=delegation, advisors=advisors)
 
 
-Display the list of rooms
+# Display the list of rooms
 @app.route("/rooming", methods=["GET"])
 def displayRooms():
     if request.method == "GET":
