@@ -242,7 +242,7 @@ def displayRooms():
         # debug print(committees)
 
         # Render the page
-        return render_template('committees.html', committees=committees)
+        return render_template('rooming.html', committees=committees)
 
 @app.route("/attendance", methods=["GET"])
 def displayAbsences():
