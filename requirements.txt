@@ -1,9 +1,9 @@
 cs50
 Flask
 Flask-Session
+Flask-Login
 requests
-authlib
-google-api-python-client
-google-auth
 gunicorn
 psycopg2-binary
+oauthlib
+pyOpenSSL
