@@ -9,7 +9,7 @@ from oauthlib.oauth2 import WebApplicationClient
 
 # Configure application
 app = Flask(__name__)
-app.secret_key = "super secret key"
+app.secret_key = b'super secret key'
 if __name__ == "__main__":
     app.run(ssl_context="adhoc")
 
