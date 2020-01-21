@@ -10,6 +10,9 @@ from oauthlib.oauth2 import WebApplicationClient
 # Configure application
 app = Flask(__name__)
 app.secret_key = b'super secret key'
+app.SESSION_COOKIE_DOMAIN = 'ymun.org'
+app.SERVER_NAME = 'ymun.org'
+
 if __name__ == "__main__":
     app.run(ssl_context="adhoc")
 
