@@ -1,0 +1,37 @@
+{% extends "public.html" %}
+
+{% block title %}
+    Committee Locations
+{% endblock %}
+
+{% block main %}
+<h1>Committee Locations</h1>
+
+<br>
+
+<table class="table table-striped" style="text-align:left">
+    <thead>
+        <tr>
+            <th>Organ</th>
+            <th>Full Name</th>
+            <th>Thursday, 01/23</th>
+            <th>Friday, 01/24</th>
+            <th>Saturday, 01/25</th>
+            <th>Sunday, 01/26</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for committee in committees %}
+        <tr>
+            <td>{{ committee["organ"] }}</td>
+            <td>{{ committee["fullname"] }}</td>
+            <td>{{ committee["day1"] }}</td>
+            <td>{{ committee["day2"] }}</td>
+            <td>{{ committee["day3"] }}</td>
+            <td>{{ committee["day4"] }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+{% endblock %}
