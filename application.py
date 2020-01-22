@@ -253,7 +253,7 @@ def displayAbsences():
 @app.route("/s1", methods=["GET"])
 def s1():
     if request.method =="GET":
-        absences = db.execute("SELECT Attendance.name AS delegate_name, Attendance.school, Delegates.committee_assigned, Delegates.position_name, Advisors.name AS advisor_name, Advisors.us_phone_number FROM Attendance JOIN Advisors ON Attendance.school = Advisors.school JOIN Delegates ON Attendance.name = Delegates.name AND Attendance.school = Delegates.school WHERE Advisors.point_of_contact = '1' AND (s1 ='0' OR s1 = '') ORDER BY Attendance.school;")
+        absences = db.execute("SELECT Attendance.name AS delegate_name, Attendance.school, Delegates.committee_assigned, Delegates.position_name, Advisors.name AS advisor_name, Advisors.us_phone_number FROM Attendance JOIN Advisors ON Attendance.school = Advisors.school JOIN Delegates ON Attendance.name = Delegates.name AND Attendance.school = Delegates.school WHERE Advisors.point_of_contact = '1' AND s1 ='0' ORDER BY Attendance.school;")
 
         #debug print(absences)
 
@@ -262,7 +262,7 @@ def s1():
 @app.route("/s2", methods=["GET"])
 def s2():
     if request.method =="GET":
-        absences = db.execute("SELECT Attendance.name AS delegate_name, Attendance.school, Delegates.committee_assigned, Delegates.position_name, Advisors.name AS advisor_name, Advisors.us_phone_number FROM Attendance JOIN Advisors ON Attendance.school = Advisors.school JOIN Delegates ON Attendance.name = Delegates.name AND Attendance.school = Delegates.school WHERE Advisors.point_of_contact = '1' AND (s2 ='0' OR s2 = '') ORDER BY Attendance.school;")
+        absences = db.execute("SELECT Attendance.name AS delegate_name, Attendance.school, Delegates.committee_assigned, Delegates.position_name, Advisors.name AS advisor_name, Advisors.us_phone_number FROM Attendance JOIN Advisors ON Attendance.school = Advisors.school JOIN Delegates ON Attendance.name = Delegates.name AND Attendance.school = Delegates.school WHERE Advisors.point_of_contact = '1' AND s2 ='0' ORDER BY Attendance.school;")
 
         #debug print(absences)
 
@@ -271,7 +271,7 @@ def s2():
 @app.route("/s3", methods=["GET"])
 def s3():
     if request.method =="GET":
-        absences = db.execute("SELECT Attendance.name AS delegate_name, Attendance.school, Delegates.committee_assigned, Delegates.position_name, Advisors.name AS advisor_name, Advisors.us_phone_number FROM Attendance JOIN Advisors ON Attendance.school = Advisors.school JOIN Delegates ON Attendance.name = Delegates.name AND Attendance.school = Delegates.school WHERE Advisors.point_of_contact = '1' AND (s3 ='0' OR s3 = '') AND s2 != '0' AND s2 != '' ORDER BY Attendance.school;")
+        absences = db.execute("SELECT Attendance.name AS delegate_name, Attendance.school, Delegates.committee_assigned, Delegates.position_name, Advisors.name AS advisor_name, Advisors.us_phone_number FROM Attendance JOIN Advisors ON Attendance.school = Advisors.school JOIN Delegates ON Attendance.name = Delegates.name AND Attendance.school = Delegates.school WHERE Advisors.point_of_contact = '1' AND s3 ='0' AND s2 != '0' ORDER BY Attendance.school;")
 
         #debug print(absences)
 
@@ -280,7 +280,7 @@ def s3():
 @app.route("/s4", methods=["GET"])
 def s4():
     if request.method =="GET":
-        absences = db.execute("SELECT Attendance.name AS delegate_name, Attendance.school, Delegates.committee_assigned, Delegates.position_name, Advisors.name AS advisor_name, Advisors.us_phone_number FROM Attendance JOIN Advisors ON Attendance.school = Advisors.school JOIN Delegates ON Attendance.name = Delegates.name AND Attendance.school = Delegates.school WHERE Advisors.point_of_contact = '1' AND (s4 ='0' OR s4 = '') ORDER BY Attendance.school;")
+        absences = db.execute("SELECT Attendance.name AS delegate_name, Attendance.school, Delegates.committee_assigned, Delegates.position_name, Advisors.name AS advisor_name, Advisors.us_phone_number FROM Attendance JOIN Advisors ON Attendance.school = Advisors.school JOIN Delegates ON Attendance.name = Delegates.name AND Attendance.school = Delegates.school WHERE Advisors.point_of_contact = '1' AND s4 ='0' ORDER BY Attendance.school;")
 
         #debug print(absences)
 
@@ -289,7 +289,7 @@ def s4():
 @app.route("/s5", methods=["GET"])
 def s5():
     if request.method =="GET":
-        absences = db.execute("SELECT Attendance.name AS delegate_name, Attendance.school, Delegates.committee_assigned, Delegates.position_name, Advisors.name AS advisor_name, Advisors.us_phone_number FROM Attendance JOIN Advisors ON Attendance.school = Advisors.school JOIN Delegates ON Attendance.name = Delegates.name AND Attendance.school = Delegates.school WHERE Advisors.point_of_contact = '1' AND (s5 ='0' OR s5 = '') AND s4 != '0' AND s4 != '' ORDER BY Attendance.school;")
+        absences = db.execute("SELECT Attendance.name AS delegate_name, Attendance.school, Delegates.committee_assigned, Delegates.position_name, Advisors.name AS advisor_name, Advisors.us_phone_number FROM Attendance JOIN Advisors ON Attendance.school = Advisors.school JOIN Delegates ON Attendance.name = Delegates.name AND Attendance.school = Delegates.school WHERE Advisors.point_of_contact = '1' AND s5 ='0' AND s4 != '0' ORDER BY Attendance.school;")
 
         #debug print(absences)
 
@@ -298,7 +298,7 @@ def s5():
 @app.route("/s6", methods=["GET"])
 def s6():
     if request.method =="GET":
-        absences = db.execute("SELECT Attendance.name AS delegate_name, Attendance.school, Delegates.committee_assigned, Delegates.position_name, Advisors.name AS advisor_name, Advisors.us_phone_number FROM Attendance JOIN Advisors ON Attendance.school = Advisors.school JOIN Delegates ON Attendance.name = Delegates.name AND Attendance.school = Delegates.school WHERE Advisors.point_of_contact = '1' AND (s6 ='0' OR s6 = '') AND s5 != '0' AND s5 != '' ORDER BY Attendance.school;")
+        absences = db.execute("SELECT Attendance.name AS delegate_name, Attendance.school, Delegates.committee_assigned, Delegates.position_name, Advisors.name AS advisor_name, Advisors.us_phone_number FROM Attendance JOIN Advisors ON Attendance.school = Advisors.school JOIN Delegates ON Attendance.name = Delegates.name AND Attendance.school = Delegates.school WHERE Advisors.point_of_contact = '1' AND s6 ='0' AND s5 != '0' ORDER BY Attendance.school;")
 
         #debug print(absences)
 
@@ -307,7 +307,7 @@ def s6():
 @app.route("/s7", methods=["GET"])
 def s7():
     if request.method =="GET":
-        absences = db.execute("SELECT Attendance.name AS delegate_name, Attendance.school, Delegates.committee_assigned, Delegates.position_name, Advisors.name AS advisor_name, Advisors.us_phone_number FROM Attendance JOIN Advisors ON Attendance.school = Advisors.school JOIN Delegates ON Attendance.name = Delegates.name AND Attendance.school = Delegates.school WHERE Advisors.point_of_contact = '1' AND (s7 ='0' OR s7 = '') ORDER BY Attendance.school;")
+        absences = db.execute("SELECT Attendance.name AS delegate_name, Attendance.school, Delegates.committee_assigned, Delegates.position_name, Advisors.name AS advisor_name, Advisors.us_phone_number FROM Attendance JOIN Advisors ON Attendance.school = Advisors.school JOIN Delegates ON Attendance.name = Delegates.name AND Attendance.school = Delegates.school WHERE Advisors.point_of_contact = '1' AND s7 ='0' ORDER BY Attendance.school;")
 
         #debug print(absences)
 
