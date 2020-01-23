@@ -25,53 +25,34 @@
         <tr>
             <td>{{ committee["organ"] }}</td>
             <td>{{ committee["fullname"] }}</td>
-            <td><a href="ymun.org/rooms/
-            {% if "WLH" in committee["day1"]%}
-            wlh
-            {% elif "LC" in committee["day1"]%}
-            lc
-            {% elif "SSS" in committee["day1"]%}
-            sss
-            {% elif "PH" in committee["day1"]%}
-            ph
-            {% else %}
-            omni
+            <td><a href="http://ymun.org/rooms/
+            {% if "WLH" in committee["day1"]%}wlh
+            {% elif "LC" in committee["day1"]%}lc
+            {% elif "SSS" in committee["day1"]%}sss
+            {% elif "PH" in committee["day1"]%}ph
+            {% else %}omni
             {% endif %}">{{ committee["day1"] }}</a></td>
-            <td><a href="ymun.org/rooms/
-            {% if "WLH" in committee["day2"]%}
-            wlh
-            {% elif "LC" in committee["day2"]%}
-            lc
-            {% elif "SSS" in committee["day2"]%}
-            sss
-            {% elif "PH" in committee["day2"]%}
-            ph
+            <td><a href="http://ymun.org/rooms/
+            {% if "WLH" in committee["day2"]%}wlh
+            {% elif "LC" in committee["day2"]%}lc
+            {% elif "SSS" in committee["day2"]%}sss
+            {% elif "PH" in committee["day2"]%}ph
             {% else %}
             omni
             {% endif %}">{{ committee["day2"] }}</a></td>
-            <td><a href="ymun.org/rooms/
-            {% if "WLH" in committee["day3"]%}
-            wlh
-            {% elif "LC" in committee["day3"]%}
-            lc
-            {% elif "SSS" in committee["day3"]%}
-            sss
-            {% elif "PH" in committee["day3"]%}
-            ph
-            {% else %}
-            omni
+            <td><a href="http://ymun.org/rooms/
+            {% if "WLH" in committee["day3"]%}wlh
+            {% elif "LC" in committee["day3"]%}lc
+            {% elif "SSS" in committee["day3"]%}sss
+            {% elif "PH" in committee["day3"]%}ph
+            {% else %}omni
             {% endif %}">{{ committee["day3"] }}</a></td>
-            <td><a href="ymun.org/rooms/
-            {% if "WLH" in committee["day4"]%}
-            wlh
-            {% elif "LC" in committee["day4"]%}
-            lc
-            {% elif "SSS" in committee["day4"]%}
-            sss
-            {% elif "PH" in committee["day4"]%}
-            ph
-            {% else %}
-            omni
+            <td><a href="http://ymun.org/rooms/
+            {% if "WLH" in committee["day4"]%}wlh
+            {% elif "LC" in committee["day4"]%}lc
+            {% elif "SSS" in committee["day4"]%}sss
+            {% elif "PH" in committee["day4"]%}ph
+            {% else %}omni
             {% endif %}">{{ committee["day4"] }}</a></td>
         </tr>
         {% endfor %}
